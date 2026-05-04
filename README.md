@@ -49,7 +49,7 @@ Traditional agent frameworks treat agents as isolated workers. **aX Agent Studio
 - **Tools provide autonomy** - Use MCP tools (messages, tasks, files) to collaborate
 - **Scale horizontally** - Spin up 10 or 1000 agents with identical architecture
 
-**It's just input → process → output.** See `echo_monitor.py` for a complete example in ~165 lines.
+**It's just input → process → output.** See `echo_monitor.py` for a complete example in ~180 lines.
 
 ---
 
@@ -93,7 +93,7 @@ response = your_logic_here(message)  # LLM, rules, code, anything!
 await send_message(response)  # Messages, tasks, files
 ```
 
-**That's it!** The `echo_monitor.py` shows this in ~165 lines of code.
+**That's it!** The `echo_monitor.py` shows this in ~180 lines of code.
 
 ### What Makes This Special
 
@@ -254,7 +254,7 @@ claude login
 ##  Using the Dashboard
 
 1. **Open** http://127.0.0.1:8000
-2. **Select** monitor type (langgraph recommended)
+2. **Select** monitor type (Claude Agent SDK recommended)
 3. **Choose** agent configuration
 4. **Pick** provider and model
 5. **Click** "Start Monitor"
@@ -368,6 +368,31 @@ PYTHONPATH=src uv run uvicorn ax_agent_studio.dashboard.backend.main:app --host 
 python scripts/kill_switch.py
 ```
 
+### Diagnostics
+
+We provide reproducible environment diagnostics to ensure consistency across contributors.
+
+**Windows (PowerShell):**
+
+```powershell
+.\scripts\diagnose_env.ps1
+```
+
+**Linux/macOS:**
+
+```bash
+./scripts/diagnose_env.sh
+```
+
+**Docker (Optional):**
+
+```bash
+docker build -t ax-diag .
+docker run --rm -v ${PWD}/artifacts:/app/artifacts ax-diag
+```
+
+Artifacts will be generated in the `artifacts/` directory.
+
 ---
 
 ##  Architecture Highlights
@@ -427,7 +452,7 @@ If you're building with MCP, we highly recommend checking out their inspector - 
 
 ##  Contributing
 
-We welcome contributions! See **[CONTRIBUTING.md](./CONTRIBUTING.md)** for guidelines.
+We welcome contributions! See **[CONTRIBUTING.md](./CONTRIBUTING.md)** for guidelines, **[CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)** for community standards, and **[SECURITY.md](./SECURITY.md)** for vulnerability reporting.
 
 **Ways to contribute:**
 -  Report bugs or suggest features via [GitHub Issues](https://github.com/ax-platform/ax-agent-studio/issues)
@@ -450,32 +475,4 @@ The agent factory pattern enables endless possibilities:
 ---
 
 **Built with  by the aX Platform community**
-
-
-## Diagnostics
-
-We provide reproducible environment diagnostics to ensure consistency across contributors.
-
-### Local Execution
-
-**Windows (PowerShell):**
-```powershell
-.\scripts\diagnose_env.ps1
-```
-
-**Linux/macOS:**
-```bash
-./scripts/diagnose_env.sh
-```
-
-### Docker Execution (Optional)
-
-You can run diagnostics in a clean container to verify parity:
-
-```bash
-docker build -t ax-diag .
-docker run --rm -v ${PWD}/artifacts:/app/artifacts ax-diag
-```
-
-Artifacts will be generated in the `artifacts/` directory.
 

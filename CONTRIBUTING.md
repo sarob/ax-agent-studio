@@ -16,18 +16,7 @@ Thank you for your interest in contributing to aX Agent Studio! This project thr
 
 ## Code of Conduct
 
-Be respectful, inclusive, and collaborative. We're building the future of agent orchestration together!
-
-**Expected behavior:**
--  Be welcoming to newcomers
--  Respect differing viewpoints
--  Accept constructive criticism
--  Focus on what's best for the community
-
-**Unacceptable behavior:**
--  Harassment, trolling, or insulting comments
--  Personal or political attacks
--  Publishing others' private information
+This project is governed by our [Code of Conduct](./CODE_OF_CONDUCT.md). By participating, you are expected to uphold it. Report unacceptable behavior to **support@ax-platform.com**.
 
 ---
 
@@ -62,8 +51,8 @@ Before contributing, make sure you have:
 ### Install Dependencies
 
 ```bash
-# Install all dependencies including dev tools (fast with uv!)
-uv pip install -e ".[dev]"
+# Install all dependencies including dev tools
+uv sync
 
 # Verify installation
 python --version  # Should show Python 3.13+
@@ -131,7 +120,9 @@ You only need to sign once.
 
 Without a signed CLA, the PR cannot be merged.
 
-### Run Tests (if available)
+---
+
+### Run Tests
 
 ```bash
 # Unit tests
@@ -416,6 +407,7 @@ examples/
 ### Get Help
 
 - **GitHub Issues**: [Report bugs or request features](https://github.com/ax-platform/ax-agent-studio/issues)
+- **Security Vulnerabilities**: See [SECURITY.md](./SECURITY.md) — do not open a public issue
 - **Discussions**: [Ask questions, share ideas](https://github.com/ax-platform/ax-agent-studio/discussions)
 - **Discord**: (Coming soon!)
 
