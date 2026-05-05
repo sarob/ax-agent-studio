@@ -1,0 +1,29 @@
+# CODEOWNERS — ax-agent-studio
+# These owners are automatically requested for review on PRs.
+
+# Default owner — all files
+* @madtank
+
+# CI/CD and community standards
+.github/ @madtank
+.github/workflows/ @madtank
+.github/CODEOWNERS @madtank
+.github/dependabot.yml @madtank
+CONTRIBUTING.md @madtank
+SECURITY.md @madtank
+CODE_OF_CONDUCT.md @madtank
+LICENSE @madtank
+
+# Dashboard (FastAPI + frontend)
+src/ax_agent_studio/dashboard/ @madtank
+
+# Monitor implementations
+src/ax_agent_studio/monitors/ @madtank
+
+# Core infrastructure (MCP, queue, message store)
+src/ax_agent_studio/mcp_manager.py @madtank
+src/ax_agent_studio/queue_manager.py @madtank
+src/ax_agent_studio/message_store.py @madtank
+
+# Configuration
+configs/ @madtank
